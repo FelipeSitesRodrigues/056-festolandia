@@ -170,7 +170,7 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2a4 4 0 0 1 4 4c0 1.7-1.3 3.4-2.6 4.6l-.9.8.6 1.3-2.2 1L6.3 12l-1.2.3C3.4 11 2 9.2 2 7.4A4 4 0 0 1 8 2Zm9 3a4 4 0 0 1 4 4c0 2-1.7 4-3.3 5.4l-1.1.9.7 1.5-2.3 1-.7-1.5-1.4.4C11.3 15.4 10 13.6 10 11.8A4 4 0 0 1 17 5ZM9 15.5l2.5 6.5 1.6-.6-2.5-6.6-1.6.7Zm7 2.6 2 5.4-1.6.5-2-5.3 1.6-.6Z"/></svg>
         </span>
         <h3>Festas<br>temáticas</h3>
-        <p>Temas personalizados, decoração e personagens para uma festa completa do seu jeito.</p>
+        <p>Papai Noel, Coelho da Páscoa, Festa Junina e Halloween. Personagem para cada data do ano.</p>
         <a class="cartao__btn"
            href="https://wa.me/5511965358929?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20uma%20*festa%20tem%C3%A1tica*."
            target="_blank" rel="noopener">Pedir orçamento</a>
@@ -204,7 +204,7 @@
       <button class="filtro" data-filtro="princesas" role="tab" aria-selected="false">Princesas</button>
       <button class="filtro" data-filtro="herois" role="tab" aria-selected="false">Super-heróis</button>
       <button class="filtro" data-filtro="classicos" role="tab" aria-selected="false">Clássicos</button>
-      <button class="filtro" data-filtro="natal" role="tab" aria-selected="false">Papai Noel</button>
+      <button class="filtro" data-filtro="datas" role="tab" aria-selected="false">Datas especiais</button>
     </div>
 
     <div class="personagens" id="grade-personagens">
@@ -271,12 +271,58 @@
         </div>
       </article>
 
-      <article class="personagem revela" data-cat="natal">
+      <article class="personagem revela" data-cat="datas">
         <img src="assets/img/p-papainoel.jpg" alt="Papai Noel em evento de fim de ano em São Paulo" loading="lazy" width="600" height="600">
         <div class="personagem__corpo">
           <h3>Papai Noel</h3>
           <p>Para festa de família, condomínio, loja e empresa</p>
           <a class="personagem__btn" href="https://wa.me/5511965358929?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20*Papai%20Noel*%20no%20meu%20evento." target="_blank" rel="noopener">Quero esse</a>
+        </div>
+      </article>
+
+      <article class="personagem personagem--pascoa revela" data-cat="datas">
+        <!-- TROCAR POR FOTO REAL: <img src="assets/img/p-pascoa.jpg" alt="Coelho da Páscoa em evento infantil em São Paulo" loading="lazy" width="600" height="600"> -->
+        <div class="personagem__vazio" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <ellipse cx="24" cy="18" rx="5.5" ry="13"/><ellipse cx="40" cy="18" rx="5.5" ry="13"/>
+            <path fill-rule="evenodd" d="M32 27a15 15 0 1 1 0 30 15 15 0 0 1 0-30Zm-6 10a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Zm12 0a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Zm-6 8a3.2 3.2 0 1 0 0 4.6 3.2 3.2 0 0 0 0-4.6Z"/>
+          </svg>
+        </div>
+        <div class="personagem__corpo">
+          <h3>Coelho da Páscoa</h3>
+          <p>Entrega de ovo em festa, escola, condomínio e loja</p>
+          <a class="personagem__btn" href="https://wa.me/5511965358929?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20o%20*Coelho%20da%20P%C3%A1scoa*." target="_blank" rel="noopener">Quero esse</a>
+        </div>
+      </article>
+
+      <article class="personagem personagem--halloween revela" data-cat="datas">
+        <!-- TROCAR POR FOTO REAL: <img src="assets/img/p-halloween.jpg" alt="Personagens de Halloween em festa em São Paulo" loading="lazy" width="600" height="600"> -->
+        <div class="personagem__vazio" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <rect x="29" y="8" width="6" height="12" rx="3"/>
+            <path fill-rule="evenodd" d="M32 19c13 0 24 9 24 20s-11 20-24 20S8 50 8 39s11-20 24-20Zm-13 12v13l9-6.5-9-6.5Zm26 0-9 6.5 9 6.5V31ZM21 47l4.5 6h13l4.5-6H21Z"/>
+          </svg>
+        </div>
+        <div class="personagem__corpo">
+          <h3>Halloween</h3>
+          <p>Personagens de Halloween para festa e ação de loja</p>
+          <a class="personagem__btn" href="https://wa.me/5511965358929?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20*Halloween*." target="_blank" rel="noopener">Quero esse</a>
+        </div>
+      </article>
+
+      <article class="personagem personagem--junina revela" data-cat="datas">
+        <!-- TROCAR POR FOTO REAL: <img src="assets/img/p-junina.jpg" alt="Personagens de festa junina em arraiá em São Paulo" loading="lazy" width="600" height="600"> -->
+        <div class="personagem__vazio" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <rect x="4" y="14" width="56" height="3" rx="1.5"/>
+            <path d="M10 17h12l-6 15z"/><path d="M26 17h12l-6 15z"/><path d="M42 17h12l-6 15z"/>
+            <path d="M18 38h12l-6 15z"/><path d="M34 38h12l-6 15z"/>
+          </svg>
+        </div>
+        <div class="personagem__corpo">
+          <h3>Festa Junina</h3>
+          <p>Arraiá de escola, empresa e condomínio com personagens</p>
+          <a class="personagem__btn" href="https://wa.me/5511965358929?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20*Festa%20Junina*." target="_blank" rel="noopener">Quero esse</a>
         </div>
       </article>
     </div>
