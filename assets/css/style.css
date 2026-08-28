@@ -45,7 +45,7 @@
 
   /* medida */
   --largura:1240px;
-  --cabecalho-h:92px;
+  --cabecalho-h:88px;
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -161,8 +161,9 @@ input,select,textarea{font:inherit}
   display:flex;align-items:center;gap:26px;
   min-height:var(--cabecalho-h);
 }
-.marca img{width:auto;height:76px;transition:height .25s var(--saida)}
-.cabecalho.encolhido .marca img{height:62px}
+/* logo deitada, proporção 2,73:1 */
+.marca img{width:auto;height:64px;transition:height .25s var(--saida)}
+.cabecalho.encolhido .marca img{height:48px}
 
 .menu{display:flex;gap:22px;margin-left:auto}
 .menu a{
@@ -616,7 +617,7 @@ input,select,textarea{font:inherit}
   display:grid;grid-template-columns:1.5fr 1fr 1.2fr 1.4fr 1fr;gap:30px;
   padding-bottom:36px;
 }
-.rodape__marca img{width:170px;margin-bottom:14px}
+.rodape__marca img{width:230px;margin-bottom:16px}
 .rodape__marca p{font-size:.84rem;color:rgba(255,255,255,.78);line-height:1.5;max-width:30ch}
 .rodape__col h3{
   font-size:.86rem;text-transform:uppercase;letter-spacing:.07em;
@@ -732,6 +733,8 @@ input,select,textarea{font:inherit}
   .hamburguer{display:block;margin-left:auto;order:3}
   .cabecalho__zap{order:2;font-size:.84rem;padding:10px 15px}
   .cabecalho__zap span{display:none}
+  .marca img{height:50px}
+  .cabecalho.encolhido .marca img{height:44px}
 
   .hero{padding:34px 0 40px}
   .hero__grade{
