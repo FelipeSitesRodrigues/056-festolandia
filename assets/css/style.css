@@ -411,12 +411,6 @@ input,select,textarea{font:inherit}
 }
 .personagem:hover{transform:translateY(-8px);box-shadow:0 17px 0 var(--roxo-escuro)}
 .personagem img{aspect-ratio:1/1;object-fit:cover;width:100%}
-/* placeholder das datas especiais, até a Sabrina mandar a foto real */
-.personagem__vazio{aspect-ratio:1/1;display:grid;place-items:center}
-.personagem__vazio svg{width:46%;height:auto;fill:#fff}
-.personagem--pascoa .personagem__vazio{background:linear-gradient(160deg,#FF8FC8,var(--rosa))}
-.personagem--halloween .personagem__vazio{background:linear-gradient(160deg,#FFA43D,var(--laranja-esc))}
-.personagem--junina .personagem__vazio{background:linear-gradient(160deg,var(--verde-claro),#1B7A33)}
 .personagem__corpo{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1;text-align:center}
 .personagem h3{font-size:1.16rem;color:var(--roxo-txt);text-transform:uppercase;margin-bottom:6px}
 .personagem p{font-size:.86rem;color:var(--tinta-suave);margin-bottom:16px}
