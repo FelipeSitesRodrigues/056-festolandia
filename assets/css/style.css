@@ -341,9 +341,11 @@ input,select,textarea{font:inherit}
 /* ---------------------------------------------------------
    Cards de serviço
    --------------------------------------------------------- */
+/* flex em vez de grid: são 7 cards, a última linha centraliza sozinha */
 .servicos{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:18px;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:18px;
 }
+.servicos .cartao{flex:0 1 calc(25% - 14px);min-width:230px}
 .cartao{
   display:flex;flex-direction:column;align-items:center;text-align:center;
   padding:26px 18px 24px;border-radius:var(--r-g);
@@ -356,12 +358,16 @@ input,select,textarea{font:inherit}
 .cartao--verde{background:linear-gradient(165deg,var(--verde-claro),var(--verde));box-shadow:0 9px 0 #1B7A33}
 .cartao--rosa{background:linear-gradient(165deg,var(--rosa-claro),var(--rosa));box-shadow:0 9px 0 #9B0E4E}
 .cartao--laranja{background:linear-gradient(165deg,#FFA43D,var(--laranja));box-shadow:0 9px 0 var(--laranja-esc)}
+.cartao--turquesa{background:linear-gradient(165deg,#2FD3C4,#0E9B90);box-shadow:0 9px 0 #067068}
+.cartao--vinho{background:linear-gradient(165deg,#C33FE0,#7B1FA2);box-shadow:0 9px 0 #4A0D6B}
 .cartao:hover{transform:translateY(-8px)}
 .cartao--roxo:hover{box-shadow:0 17px 0 var(--roxo-escuro)}
 .cartao--azul:hover{box-shadow:0 17px 0 #0E4A9E}
 .cartao--verde:hover{box-shadow:0 17px 0 #1B7A33}
 .cartao--rosa:hover{box-shadow:0 17px 0 #9B0E4E}
 .cartao--laranja:hover{box-shadow:0 17px 0 var(--laranja-esc)}
+.cartao--turquesa:hover{box-shadow:0 17px 0 #067068}
+.cartao--vinho:hover{box-shadow:0 17px 0 #4A0D6B}
 
 .cartao__ico{
   display:grid;place-items:center;width:74px;height:74px;margin-bottom:16px;
@@ -374,6 +380,8 @@ input,select,textarea{font:inherit}
 .cartao--verde .cartao__ico svg{fill:var(--verde)}
 .cartao--rosa .cartao__ico svg{fill:var(--rosa)}
 .cartao--laranja .cartao__ico svg{fill:var(--laranja-esc)}
+.cartao--turquesa .cartao__ico svg{fill:#0E9B90}
+.cartao--vinho .cartao__ico svg{fill:#7B1FA2}
 
 .cartao h3{font-size:1.24rem;text-transform:uppercase;margin-bottom:10px}
 .cartao p{font-size:.9rem;line-height:1.5;color:rgba(255,255,255,.92);margin-bottom:20px}
@@ -554,6 +562,45 @@ input,select,textarea{font:inherit}
 }
 
 /* ---------------------------------------------------------
+   FAQ
+   --------------------------------------------------------- */
+.faq{display:grid;gap:12px;max-width:860px;margin-inline:auto}
+.faq__item{
+  background:rgba(255,255,255,.1);
+  border:3px solid rgba(255,255,255,.34);
+  border-radius:var(--r-m);
+  overflow:hidden;
+  transition:background .22s var(--saida), border-color .22s var(--saida);
+}
+.faq__item[open]{background:#fff;border-color:#fff}
+.faq__item summary{
+  display:flex;align-items:center;gap:14px;
+  padding:17px 20px;cursor:pointer;list-style:none;
+  font-family:var(--display);font-weight:700;font-size:1.04rem;line-height:1.25;
+  color:#fff;
+}
+.faq__item[open] summary{color:var(--roxo-txt)}
+.faq__item summary::-webkit-details-marker{display:none}
+.faq__item summary::after{
+  content:"";flex:none;margin-left:auto;
+  width:28px;height:28px;border-radius:50%;
+  background:var(--amarelo);
+  /* sinal de mais desenhado com dois gradientes, sem imagem extra */
+  background-image:
+    linear-gradient(var(--tinta),var(--tinta)),
+    linear-gradient(var(--tinta),var(--tinta));
+  background-size:14px 3px, 3px 14px;
+  background-position:center, center;
+  background-repeat:no-repeat;
+  transition:transform .25s var(--saida);
+}
+.faq__item[open] summary::after{transform:rotate(135deg)}
+.faq__item summary:hover{background:rgba(255,255,255,.08)}
+.faq__item[open] summary:hover{background:transparent}
+.faq__resposta{padding:0 20px 18px 20px;color:var(--tinta-suave)}
+.faq__resposta p{margin:0;font-size:.97rem;line-height:1.6}
+
+/* ---------------------------------------------------------
    Depoimentos
    --------------------------------------------------------- */
 .carrossel{position:relative;padding:0 54px}
@@ -703,7 +750,7 @@ input,select,textarea{font:inherit}
    Responsivo
    --------------------------------------------------------- */
 @media (max-width:1100px){
-  .servicos{grid-template-columns:repeat(3,1fr)}
+  .servicos .cartao{flex:0 1 calc(33.333% - 12px)}
   .motivos{grid-template-columns:repeat(3,1fr);gap:24px}
   .personagens{grid-template-columns:repeat(3,1fr)}
   .carrossel__pista{grid-auto-columns:calc(33.333% - 14px)}
@@ -784,7 +831,10 @@ input,select,textarea{font:inherit}
 @media (max-width:760px){
   body{font-size:16px}
   .secao{padding:48px 0}
-  .servicos{grid-template-columns:1fr;gap:16px;max-width:420px;margin-inline:auto}
+  .servicos{max-width:420px;margin-inline:auto;gap:16px}
+  .servicos .cartao{flex:0 1 100%}
+  .faq__item summary{font-size:.96rem;padding:15px 16px;gap:10px}
+  .faq__resposta{padding:0 16px 16px}
   .personagens{grid-template-columns:repeat(2,1fr);gap:14px}
   .motivos{grid-template-columns:1fr;gap:20px;max-width:420px;margin-inline:auto}
   .carrossel{padding:0}
